@@ -78,6 +78,7 @@ $app->singleton(
 |
 */
 
+$app->register(SwooleTW\Http\LumenServiceProvider::class);
 // $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
@@ -93,6 +94,8 @@ $app->singleton(
 |
 */
 $app->configure('database');
+$app->configure('swoole_http');
+$app->configure('swoole_websocket');
 
 $app->router->group([
     'namespace' => 'App\Http\Controllers',
