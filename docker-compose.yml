@@ -1,19 +1,14 @@
 version: '2'
 
 services:
-    nginx:
-        image: nginx:1.13.6
-        ports:
-            - 8000:80
-        volumes:
-            - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
-        volumes_from:
-            - php
-
-    php:
+    application:
         build: ./docker/php/
         volumes:
             - .:/var/www/html
+        links: 
+            - redis
+        ports: 
+            - 8000:80
 
     redis:
         image: redis:3.2.10
