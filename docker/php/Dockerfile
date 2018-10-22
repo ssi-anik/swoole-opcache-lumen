@@ -10,8 +10,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN docker-php-ext-install pdo pdo_mysql pdo_pgsql
 
-RUN pecl install -o -f redis \
-    &&  rm -rf /tmp/pear \
-    &&  echo "extension=redis.so" > /usr/local/etc/php/conf.d/redis.ini
+RUN pecl install redis
+RUN docker-php-ext-enable redis
 
 CMD php-fpm
