@@ -19,7 +19,11 @@ $router->get('/', function () use ($router) {
 });
 
 $router->get('users', function () {
+    if(!$users = app('cache')->get('users')) {
+        app('cache')->put('users', $users = \App\User::take(50)->offset(1000)->get(), 0.17);
+    }
+    
     return [
-        'users' => \App\User::take(50)->offset(1000)->get(),
+        'users' => $users,
     ];
 });
