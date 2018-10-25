@@ -10,8 +10,8 @@ RUN apt-get update && apt-get install -y \
 
 RUN docker-php-ext-install pdo pdo_mysql pdo_pgsql
 
-RUN pecl install redis swoole
-RUN docker-php-ext-enable redis swoole
+RUN pecl install swoole
+RUN docker-php-ext-enable swoole
 
 EXPOSE 80
 
