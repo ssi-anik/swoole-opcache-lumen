@@ -5,6 +5,6 @@
 - Change the variables required. `SWOOLE_*` variables are required for `/.*swoole.*/ig` branches.
 - `git checkout branchname` (i.e; opcache, swoole, opcache-swoole).
 - change the `docker-compose.yml` if required.
-- `docker-compose up -d --build`
 - `composer install` to install required files.
 - `composer dump-autoload -o` to optimize the classload dump.
+- `docker-compose up -d --build`
