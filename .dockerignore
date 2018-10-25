@@ -1,0 +1,6 @@
+.git
+docker
+.idea
+.DS_Store
+storage/logs/lumen*.log
+docker-compose.yml
