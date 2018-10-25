@@ -10,9 +10,6 @@ RUN apt-get update && apt-get install -y \
 
 RUN docker-php-ext-install pdo pdo_mysql pdo_pgsql
 
-RUN pecl install redis
-RUN docker-php-ext-enable redis
-
 CMD php-fpm
 
 # SET ENVIROMENT EXAMPLE FROM: https://mhdzaherghaibeh.name/2018/05/23/using-swoole-php-7-2-docker-image/
