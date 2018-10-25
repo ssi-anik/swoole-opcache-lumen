@@ -7,10 +7,3 @@ services:
             - .:/var/www/html
         ports: 
             - 8000:80
-        links: 
-            - redis
-
-    redis:
-        image: redis:3.2.10
-        ports:
-            - 6379:6379
