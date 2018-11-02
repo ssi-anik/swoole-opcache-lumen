@@ -15,6 +15,7 @@ $router->get('/', function () use ($router) {
     return [
         'framework' => 'Lumen',
         'version' => $router->app->version(),
+        'envs' => $_ENV,
     ];
 });
 
