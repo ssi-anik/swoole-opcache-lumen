@@ -12,6 +12,9 @@ RUN docker-php-ext-enable redis swoole opcache
 COPY . /app
 WORKDIR /app
 
+RUN mv /usr/local/etc/php-fpm.d/www.conf /usr/local/etc/php-fpm.d/www.conf.backup
+COPY ./deploy/www.conf /usr/local/etc/php-fpm.d/www.conf
+
 RUN usermod -a -G www-data root
 RUN chgrp -R www-data storage
 
