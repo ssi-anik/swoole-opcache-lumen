@@ -15,6 +15,9 @@ WORKDIR /app
 RUN usermod -a -G www-data root
 RUN chgrp -R www-data storage
 
+RUN mv /usr/local/etc/php-fpm.d/www.conf /usr/local/etc/php-fpm.d/www.conf.backup
+COPY ./deploy/www.conf /usr/local/etc/php-fpm.d/www.conf
+
 RUN chown -R www-data:www-data ./storage
 RUN chmod -R 0777 ./storage
 
