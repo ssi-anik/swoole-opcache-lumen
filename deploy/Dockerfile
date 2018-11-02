@@ -12,6 +12,9 @@ COPY ./deploy/lumen.conf /etc/nginx/sites-available/default.conf
 
 RUN ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/default
 
+RUN mv /usr/local/etc/php-fpm.d/www.conf /usr/local/etc/php-fpm.d/www.conf.backup
+COPY ./deploy/www.conf /usr/local/etc/php-fpm.d/www.conf
+
 COPY . /app
 WORKDIR /app
 
